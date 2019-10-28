@@ -15,5 +15,23 @@ namespace BackEnd.Data
         { }
 
         public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<Session> Tracks { get; set; }
+        public DbSet<Session> Sessions { get; set; }
+        public DbSet<Attendee> Attendees { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Attendee>()
+                .HasIndex(a => a.UserName)
+                .IsUnique();
+
+            modelBuilder.Entity<SessionAttendee>()
+                .HasKey(sa => new { sa.SessionId, sa.AttendeeId });
+
+            modelBuilder.Entity<SessionSpeaker>()
+                .HasKey(ss => new { ss.SessionId, ss.SpeakerId });
+        }
     }
 }

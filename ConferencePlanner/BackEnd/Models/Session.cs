@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace BackEnd.Models
 {
-    public class Speaker : ConferenceDTO.Speaker
+    public class Session : ConferenceDTO.Session
     {
         public virtual ICollection<SessionSpeaker> SessionSpeakers { get; set; }
+        public virtual ICollection<SessionAttendee> SessionAttendees { get; set; }
+        public Track Track { get; set; }
     }
 }
