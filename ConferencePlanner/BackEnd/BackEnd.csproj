@@ -7,6 +7,10 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20191028085511_Initial.cs" />
     <Compile Remove="Data\Migrations\20191028085511_Initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191028110525_Refactor.cs" />
+    <Compile Remove="Data\Migrations\20191028110525_Refactor.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191028124313_TrackRename.cs" />
+    <Compile Remove="Data\Migrations\20191028124313_TrackRename.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

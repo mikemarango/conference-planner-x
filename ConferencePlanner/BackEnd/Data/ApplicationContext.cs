@@ -15,7 +15,7 @@ namespace BackEnd.Data
         { }
 
         public DbSet<Speaker> Speakers { get; set; }
-        public DbSet<Session> Tracks { get; set; }
+        public DbSet<Track> Tracks { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Attendee> Attendees { get; set; }
 
