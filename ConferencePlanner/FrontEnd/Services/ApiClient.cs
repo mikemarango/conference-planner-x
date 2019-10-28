@@ -70,5 +70,16 @@ namespace FrontEnd.Services
                 .PutAsJsonAsync($"sessions/{session.Id}", session);
             response.EnsureSuccessStatusCode();
         }
+
+        public async Task<List<SearchResult>> SearchAsync(string query)
+        {
+            var term = new SearchTerm { Query = query };
+
+            var response = await http.PostAsJsonAsync($"search", term);
+
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsAsync<List<SearchResult>>();
+        }
     }
 }

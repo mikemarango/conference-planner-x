@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BackEnd.Controllers
 {
     [Route("api/search")]
+    [ApiController]
     public class SearchController : Controller
     {
         private readonly ApplicationContext _context;
