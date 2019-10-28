@@ -28,6 +28,7 @@ namespace FrontEnd
             services.AddHttpClient<ApiClient>(options =>
              options.BaseAddress = 
              new Uri(Configuration.GetConnectionString("ApiUrl")));
+            services.AddScoped<AdminService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +50,7 @@ namespace FrontEnd
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
