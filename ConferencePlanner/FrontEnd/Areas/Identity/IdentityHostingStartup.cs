@@ -20,7 +20,8 @@ namespace FrontEnd.Areas.Identity
                         context.Configuration.GetConnectionString("IdentityContextConnection")));
 
                 services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<IdentityContext>();
+                    .AddEntityFrameworkStores<IdentityContext>()
+                    .AddClaimsPrincipalFactory<ClaimsPrincipalFactory>();
             });
         }
     }

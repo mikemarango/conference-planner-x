@@ -44,10 +44,10 @@ namespace FrontEnd.Services
             return await response.Content.ReadAsAsync<List<SessionResponse>>();
         }
 
-        public async Task DeleteSessionAsync(int id)
+        public async Task<bool> DeleteSessionAsync(int id)
         {
             var response = await http.DeleteAsync($"sessions/{id}");
-            response.EnsureSuccessStatusCode();
+            return response.IsSuccessStatusCode;
         }
 
         public async Task<SpeakerResponse> GetSpeakerAsync(int id)

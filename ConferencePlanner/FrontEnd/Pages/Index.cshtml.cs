@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ConferenceDTO;
+using FrontEnd.Helpers;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -30,7 +31,7 @@ namespace FrontEnd.Pages
         public async Task OnGet([FromServices]ApiClient backendClient,
                                 int day = 0)
         {
-            //IsAdmin = User.IsAdmin();
+            IsAdmin = User.IsAdmin();
 
             CurrentDayOffset = day;
 
